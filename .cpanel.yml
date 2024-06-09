@@ -2,7 +2,7 @@
 deployment:
   tasks:
     # Define the deployment path
-    - export DEPLOYPATH=/home/example/public_html/
+    - export DEPLOYPATH=/home/newjourn/public_html/
 
     # Install Composer dependencies
     - /usr/local/bin/composer install --no-dev --optimize-autoloader
