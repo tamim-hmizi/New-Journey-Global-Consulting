@@ -1,0 +1,494 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<style>body {
+    background-color: white;
+}</style>
+<section id="hero-2" class="hero-section division">
+    <!-- SLIDER -->
+    <div class="slider">
+        <ul class="slides">
+            <!-- SLIDE #1 -->
+            <li id="slide-1">
+                <!-- Background Image -->
+                <img src="{{asset('home/header.jpg')}}" alt="slide-background" />
+
+                <!-- Image Caption -->
+                <div class="caption d-flex align-items-center left-align">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-9 col-lg-7">
+                                <div class="caption-txt white-color">
+                                    <!-- Title -->
+                                    <h3>Étudiez au</h3>
+                                    <h2 class="red-color">Canada</h2>
+
+                                    <!-- Text -->
+                                    <h4 class="h4-md white-color">
+                                        Voyage et tourisme, ingénierie, affaires,
+                                        santé, sciences, informatique et bien plus encore...
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End row -->
+                    </div>
+                    <!-- End container -->
+                </div>
+                <!-- End Image Caption -->
+            </li>
+            <!-- END SLIDE #1 -->
+            <!-- SLIDE #2 -->
+            <!-- <li id="slide-2">
+             
+              <img src="images/slider/slide-5.jpg" alt="slide-background" />
+
+              <div class="caption d-flex align-items-center right-align">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-9 col-lg-7">
+                      <div class="caption-txt white-color">
+                       
+                        <h3>Top Ranked</h3>
+                        <h2>Universities</h2>
+
+                       
+                        <h4 class="h4-md">
+                          Canberra, Sydney, Adelaide, Gold Coast, Brisbane,
+                          Darwin, Melbourne, Perth
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+               
+              </div>
+              
+            </li> -->
+        </ul>
+    </div>
+    <!-- END SLIDER -->
+
+    <!-- SLIDER NAV -->
+    <div class="hero-slider-nav icon-xs white-color">
+        <div class="slider-btn">
+            <a class="slide-prev"><span class="flaticon-442-left-arrow"></span></a>
+            <a class="slide-next"><span class="flaticon-441-right-arrow"></span></a>
+        </div>
+    </div>
+</section>
+
+<section id="about-3" class="about-section division">
+    <div class="container">
+        <div class="abox-3-holder">
+            <div class="row d-flex align-items-center">
+                <!-- BOÎTE À PROPOS #1 - Travail -->
+                <div class="col-lg-3">
+                    <div class="abox-3 icon-sm">
+                        <!-- Icône -->
+                        <div class="abox-3-icon primary-color">
+                            <span class="flaticon-121-shield"></span>
+                        </div>
+                        <!-- Texte -->
+                        <div class="abox-3-txt">
+                            <h5 class="h5-md darkblue-color">
+                                Travail à l'étranger
+                            </h5>
+                            <p>
+                                Opportunités de travail à l'étranger, assistance pour les visas et conseils professionnels.
+                            </p>
+                            <a href="{{ path('app_travail') }}">Lire plus <i class="fas fa-caret-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOÎTE À PROPOS #2 - Étude -->
+                <div class="col-lg-3">
+                    <div class="abox-3 icon-sm">
+                        <!-- Icône -->
+                        <div class="abox-3-icon primary-color">
+                            <span class="flaticon-147-presentation-4"></span>
+                        </div>
+                        <!-- Texte -->
+                        <div class="abox-3-txt">
+                            <h5 class="h5-md darkblue-color">
+                                Étudier à l'étranger
+                            </h5>
+                            <p>
+                                Conseils pour les études à l'étranger, assistance pour les visas étudiants, et admission garantie dans des universités.
+                            </p>
+                            <a href="{{ path('app_etude') }}">Lire plus <i class="fas fa-caret-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOÎTE À PROPOS #3 - Visa Visiteur -->
+                <div class="col-lg-3">
+                    <div class="abox-3 icon-sm">
+                        <!-- Icône -->
+                        <div class="abox-3-icon primary-color">
+                            <span class="flaticon-036-padlock-1"></span>
+                        </div>
+                        <!-- Texte -->
+                        <div class="abox-3-txt">
+                            <h5 class="h5-md darkblue-color">
+                                Visa Visiteur
+                            </h5>
+                            <p>
+                                Obtenez votre visa visiteur pour visiter le Canada, avec assistance et conseils personnalisés.
+                            </p>
+                            <a href="{{ path('app_visa_visiteur') }}">Lire plus <i class="fas fa-caret-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOÎTE À PROPOS #4 - Immigration -->
+                <div class="col-lg-3">
+                    <div class="abox-3 icon-sm">
+                        <!-- Icône -->
+                        <div class="abox-3-icon primary-color">
+                            <span class="flaticon-123-upload"></span>
+                        </div>
+                        <!-- Texte -->
+                        <div class="abox-3-txt">
+                            <h5 class="h5-md darkblue-color">
+                                Immigration
+                            </h5>
+                            <p>
+                                Services d'immigration professionnels pour vous aider à immigrer au Canada.
+                            </p>
+                            <a href="{{ path('app_immigration') }}">Lire plus <i class="fas fa-caret-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End row -->
+        </div>
+        <!-- End container -->
+    </div>
+</section>
+<section id="about-2" class="wide-60 about-section division">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <!-- IMAGE DE L'AGENCE -->
+            <div class="col-md-6">
+                <div class="about-img text-center mb-40">
+                    <img class="img-fluid" src="images/image-05.png" alt="Image à propos">
+                </div>
+            </div>
+                    <!-- TEXTE À PROPOS -->
+        <div class="col-md-6">
+            <div class="about-2-txt pc-20 mb-40">
+                <!-- ID de la section -->
+                <span class="section-id id-color">À propos de l'agence</span>
+
+                <!-- Titre -->
+                <h3 class="h3-lg darkblue-color">
+                    Consultations pour les étudiants potentiels
+                </h3>
+
+                <!-- Texte #1 -->
+                <div class="box-list">
+                    <div class="box-list-icon">
+                        <i class="fas fa-genderless"></i>
+                    </div>
+                    <p>
+                        Nous offrons des consultations professionnelles pour aider les étudiants potentiels à trouver les meilleures options d'études à l'étranger.
+                    </p>
+                </div>
+
+                <!-- Texte #2 -->
+                <div class="box-list">
+                    <div class="box-list-icon">
+                        <i class="fas fa-genderless"></i>
+                    </div>
+                    <p>
+                        Notre équipe vous guide à chaque étape du processus, depuis la sélection des programmes d'études jusqu'à l'obtention des visas.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- FIN DU TEXTE À PROPOS -->
+    </div>
+    <!-- Fin de la ligne -->
+</div>
+<!-- Fin du conteneur -->
+</section>
+<div class="section-divider">
+        <div class="container">
+          <div class="row"><div class="grey-border"></div></div>
+        </div>
+      </div>
+      <div class="section-divider">
+        <div class="container">
+          <div class="row"><div class="grey-border"></div></div>
+        </div>
+      </div>
+
+      <section id="about-6" class="bg-scroll pt-100 about-section division">
+    <div class="container white-color">
+        <div class="row d-flex align-items-center">
+            <!-- IMAGE À PROPOS -->
+            <div class="col-lg-6">
+                <div class="about-6-img text-center">
+                    <img class="img-fluid" src="images/image-08.png" alt="Image à propos">
+                </div>
+            </div>
+                    <!-- TEXTE À PROPOS -->
+        <div class="col-lg-6">
+            <div class="about-6-txt pc-20">
+                <!-- ID de la section -->
+                <span class="section-id id-color">Éducation à l'étranger</span>
+
+                <!-- Titre -->
+                <h2 class="h2-xs">Vous recherchez une éducation de qualité à l'étranger ?</h2>
+
+                <!-- Texte -->
+                <p class="p-md">
+                    Faites le choix d'une éducation de qualité à l'étranger avec nous. Découvrez nos programmes diversifiés et nos services d'accompagnement personnalisés.
+                </p>
+
+                <!-- Petit titre -->
+                <h5 class="h5-lg">350+ Universités dans 17 pays :</h5>
+
+                <!-- Liste des drapeaux -->
+                <ul class="flags-list">
+                    <li>
+                        <a href="country-details.html"><img src="images/flags/canada.png" alt="drapeau"><span>Canada</span></a>
+                    </li>
+                    <li>
+                        <a href="country-details.html"><img src="images/flags/eu.png" alt="drapeau"><span>Europe</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- FIN DU TEXTE À PROPOS -->
+    </div>
+    <!-- Fin de la ligne -->
+</div>
+<!-- Fin du conteneur -->
+</section>
+
+<div id="brands-2" class="wide-100 brands-section division">
+    <div class="container">
+        <!-- SECTION TITLE -->
+        <div class="row">
+            <div class="col-md-12 section-title center">
+                <!-- Title -->
+                <h2 class="h2-xs darkblue-color">Nos Institutions Partenaires</h2>
+
+                <!-- Text -->
+                <p class="p-md">
+                    Nous sommes fiers de collaborer avec ces institutions renommées qui partagent notre engagement pour l'excellence académique et le succès des étudiants. Leurs programmes de qualité et leurs ressources enrichissantes offrent aux étudiants les meilleures opportunités pour réussir dans leurs parcours éducatifs et professionnels.
+                </p>
+            </div>
+        </div>
+        <!-- END SECTION TITLE -->
+
+        <!-- BRANDS HOLDER -->
+        <div class="row brands-holder">
+            <!-- BRAND LOGO IMAGE -->
+            <div id="bl-01" class="col-sm-6 col-md-3 b-bottom b-right">
+                <div class="brand-logo">
+                    <img class="img-fluid" src="images/brand-1.png" alt="brand-logo" />
+                </div>
+            </div>
+            <div id="bl-02" class="col-sm-6 col-md-3 b-bottom b-right">
+              <div class="brand-logo">
+                <img
+                  class="img-fluid"
+                  src="images/brand-2.png"
+                  alt="brand-logo"
+                />
+              </div>
+            </div>
+            <div id="bl-03" class="col-sm-6 col-md-3 b-bottom b-right">
+              <div class="brand-logo">
+                <img
+                  class="img-fluid"
+                  src="images/brand-3.png"
+                  alt="brand-logo"
+                />
+              </div>
+            </div>
+             <div id="bl-04" class="col-sm-6 col-md-3 b-bottom">
+              <div class="brand-logo">
+                <img
+                  class="img-fluid"
+                  src="images/brand-4.png"
+                  alt="brand-logo"
+                />
+              </div>
+            </div>
+            <div id="bl-05" class="col-sm-6 col-md-3 b-right">
+              <div class="brand-logo">
+                <img
+                  class="img-fluid"
+                  src="images/brand-5.png"
+                  alt="brand-logo"
+                />
+              </div>
+            </div>
+            <div id="bl-06" class="col-sm-6 col-md-3 b-right">
+              <div class="brand-logo">
+                <img
+                  class="img-fluid"
+                  src="images/brand-6.png"
+                  alt="brand-logo"
+                />
+              </div>
+            </div>
+              <div id="bl-07" class="col-sm-6 col-md-3 b-right">
+              <div class="brand-logo">
+                <img
+                  class="img-fluid"
+                  src="images/brand-7.png"
+                  alt="brand-logo"
+                />
+              </div>
+            </div>
+            <div id="bl-08" class="col-sm-6 col-md-3">
+              <div class="brand-logo">
+                <img
+                  class="img-fluid"
+                  src="images/brand-8.png"
+                  alt="brand-logo"
+                />
+              </div>
+            </div>
+            <!-- Repeat for other brand logos -->
+        </div>
+        <!-- END BRANDS HOLDER -->
+    </div>
+    <!-- End container -->
+</div>
+<section id="tabs-2" class="wide-60 tabs-section division">
+    <div class="container">
+        <div class="row">
+            <!-- TABS NAVIGATION -->
+            <div class="col-md-12">
+                <div class="tabs-nav clearfix">
+                    <ul class="tabs-2 primary-tabs">
+                        <!-- TAB-1 LINK -->
+                        <li class="tab-link displayed" data-tab="tab-11">
+                            <span>Approuvé par le gouvernement</span>
+                        </li>
+
+                        <!-- TAB-2 LINK -->
+                        <li class="tab-link" data-tab="tab-12">
+                            <span>Aucun frais caché</span>
+                        </li>
+
+                        <!-- TAB-3 LINK -->
+                        <li class="tab-link" data-tab="tab-13">
+                            <span>Rapide, facile et sécurisé</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- END TABS NAVIGATION -->
+
+            <!-- TABS CONTENT -->
+            <div class="col-md-12">
+                <div class="tabs-content">
+                    <!-- TAB-1 CONTENT -->
+                    <div id="tab-11" class="tab-content displayed">
+                        <div class="row d-flex align-items-center">
+                            <!-- TAB-1 IMAGE -->
+                            <div class="col-md-6 mb-40">
+                                <div class="tab-img text-center">
+                                    <img class="img-fluid" src="images/image-01.png" alt="tab-image" />
+                                </div>
+                            </div>
+
+                            <!-- TAB-1 TEXT -->
+                            <div class="col-md-6">
+                                <div class="txt-block pc-20 mb-40">
+                                    <!-- Section ID -->
+                                    <span class="section-id id-color">Obtention d'un visa</span>
+
+                                    <!-- Title -->
+                                    <h3 class="h3-lg darkblue-color">Nous rendons le processus de visa plus rapide</h3>
+
+                                    <!-- Text -->
+                                    <p>
+                                        Notre agence vous aide à obtenir rapidement et efficacement votre visa. Avec notre expertise, nous rendons le processus de demande de visa simple et sans tracas pour vous assurer une expérience fluide et sécurisée.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End row -->
+                    </div>
+                    <!-- END TAB-1 CONTENT -->
+
+                    <!-- TAB-2 CONTENT -->
+                    <div id="tab-12" class="tab-content">
+                        <div class="row d-flex align-items-center">
+                            <!-- TAB-2 IMAGE -->
+                            <div class="col-md-6">
+                                <div class="tab-img text-center mb-40">
+                                    <img class="img-fluid" src="images/image-03.png" alt="tab-image" />
+                                </div>
+                            </div>
+
+                            <!-- TAB-2 TEXT -->
+                            <div class="col-md-6">
+                                <div class="txt-block pc-20 mb-40">
+                                    <!-- Section ID -->
+                                    <span class="section-id id-color">Pas de frais caché</span>
+
+                                    <!-- Title -->
+                                    <h3 class="h3-lg darkblue-color">Des services transparents sans frais cachés</h3>
+
+                                    <!-- Text -->
+                                    <p>
+                                        Nous sommes fiers d'offrir des services sans frais cachés. Avec nous, vous saurez exactement ce que vous payez, sans surprises ni frais supplémentaires. Nous croyons en la transparence totale pour assurer la confiance et la satisfaction de nos clients.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End row -->
+                    </div>
+                    <!-- END TAB-2 CONTENT -->
+
+                    <!-- TAB-3 CONTENT -->
+                    <div id="tab-13" class="tab-content">
+                        <div class="row d-flex align-items-center">
+                            <!-- TAB-3 IMAGE -->
+                            <div class="col-md-6">
+                                <div class="tab-img text-center mb-40">
+                                    <img class="img-fluid" src="images/image-02.png" alt="tab-image" />
+                                </div>
+                            </div>
+
+                            <!-- TAB-3 TEXT -->
+                            <div class="col-md-6">
+                                <div class="txt-block pc-20 mb-40">
+                                    <!-- Section ID -->
+                                    <span class="section-id id-color">Conseillers professionnels</span>
+
+                                    <!-- Title -->
+                                    <h3 class="h3-lg darkblue-color">Garantissez le succès avec nos conseillers</h3>
+
+                                    <!-- Text -->
+                                    <p>
+                                        Nos conseillers professionnels vous accompagnent à chaque étape pour garantir votre succès. Avec leur expertise et leur soutien dévoué, nous vous aidons à atteindre vos objectifs rapidement et efficacement, en vous offrant une assistance personnalisée et des conseils pratiques.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End row -->
+                    </div>
+                    <!-- END TAB-3 CONTENT -->
+                </div>
+            </div>
+            <!-- END TABS CONTENT -->
+        </div>
+        <!-- End row -->
+    </div>
+    <!-- End container -->
+</section>
+
+{% endblock %}

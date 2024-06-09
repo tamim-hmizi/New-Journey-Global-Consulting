@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<section id="contacts-4" class="bg-lightgrey wide-100">
+    <div class="container">
+        <h1>Formulaire de Consultation</h1>
+        {{ form_start(form) }}
+        {{ form_row(form.Name, {'label': 'Prénom', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(form.LastName, {'label': 'Nom', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(form.DateOfBirth, {'label': 'Date de Naissance', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(form.Email, {'label': 'Email', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(form.PhoneNumber, {'label': 'Numéro de Téléphone', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(form.Profession, {'label': 'Profession', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(form.PostalAddress, {'label': 'Adresse Postale', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(form.City, {'label': 'Ville', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(form.PostalCode, {'label': 'Code Postal', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(form.MeetingDate, {'label': 'Date de la Consultation', 'attr': {'class': 'form-control meeting-date'}}) }}
+        {{ form_row(form.MeetingHour, {'label': 'Heure de la Consultation', 'attr': {'class': 'form-control meeting-hour'}}) }}
+        {{ form_row(form.Type, {'label': 'Type de Consultation', 'attr': {'class': 'form-control'}}) }}
+        <br/>
+        {{ form_row(form.Submit, {'label': 'Soumettre', 'attr': {'class': 'form-control btn-primary'}}) }}
+        {{ form_end(form) }}
+    </div>
+</section>
+{% endblock %}
+
+{% block javascripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var meetingDateSelect = document.querySelector('.meeting-date');
+    var meetingHourSelect = document.querySelector('.meeting-hour');
+
+    // Fonction pour récupérer les heures de consultation disponibles en fonction de la date sélectionnée
+    function fetchConsultationHours() {
+        var selectedDate = meetingDateSelect.value;
+
+        // Réinitialiser les options avant de récupérer les nouvelles heures de consultation
+        meetingHourSelect.querySelectorAll('option').forEach(option => {
+            option.disabled = false; // Activer toutes les options
+            option.style.backgroundColor = ''; // Réinitialiser la couleur de fond
+        });
+
+        // Faire une requête AJAX pour obtenir les heures de consultation disponibles pour la date sélectionnée
+        fetch('/get-all-consultations/' + selectedDate)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('La réponse du réseau n\'était pas correcte');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Désactiver les options qui sont déjà réservées
+                data.forEach(hour => {
+                    switch (hour.date) {
+                        // Utiliser des cas switch ou toute autre logique pour désactiver des options spécifiques
+                        case '1970-01-01 08:00:00.000000':
+                            disableOption(0);
+                            break;
+                        case '1970-01-01 09:00:00.000000':
+                            disableOption(1);
+                            break;
+                        // Ajouter des cas pour d'autres heures si nécessaire
+                    }
+                });
+            })
+            .catch(error => console.error('Erreur:', error));
+    }
+
+    // Fonction d'aide pour désactiver une option par index
+    function disableOption(index) {
+        var option = meetingHourSelect.querySelector('option[value="' + index + '"]');
+        if (option) {
+            option.disabled = true;
+            option.style.backgroundColor = '#CCCCCC';
+        }
+    }
+
+    // Écouteur d'événement pour récupérer les heures de consultation lorsque la date change
+    meetingDateSelect.addEventListener('change', fetchConsultationHours);
+
+    // Récupération initiale lors du chargement de la page
+    fetchConsultationHours();
+});
+</script>
+{% endblock %}
